@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRIMA QOE — Artisanal Sambal Kecombrang & Gourmet Delicacies | Bondowoso</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* =========================================
+       VARIABLES & RESET
+    ========================================= */
+    :root {
+      --bg-primary: #0D0C0A;
+      --bg-secondary: #13120F;
+      --bg-card: #181713;
+      --bg-card-hover: #1E1D18;
+      --bg-input: #1B1A16;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(242, 199, 68, 0.35);
+      --gold-primary: #F2C744;
+      --gold-hover: #E0B432;
+      --gold-muted: #B69538;
+      --text-primary: #F5F2EB;
+      --text-secondary: #A19D94;
+      --text-muted: #6E6A63;
+      --green-wa: #25D366;
+      --green-dark: #15261C;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --container-max: 1200px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+    }
+
+    button {
+      font-family: var(--font-sans);
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================
+       HEADER & TOP BAR
+    ========================================= */
+    .navbar {
+      background-color: rgba(13, 12, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    /* Brand Logo */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--gold-primary);
+      box-shadow: 0 0 15px rgba(242, 199, 68, 0.25);
+      flex-shrink: 0;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+    }
+
+    .brand-badge {
+      background-color: rgba(242, 199, 68, 0.15);
+      color: var(--gold-primary);
+      border: 1px solid var(--border-gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Nav Links Pill */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      background-color: #161511;
+      border: 1px solid var(--border-subtle);
+      padding: 5px;
+      border-radius: var(--radius-pill);
+      gap: 4px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 7px 18px;
+      border-radius: var(--radius-pill);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a.active {
+      background-color: #26241D;
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Admin Portal Button */
+    .btn-admin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #161511;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+    }
+
+    .btn-admin:hover {
+      border-color: var(--border-gold);
+      color: var(--gold-primary);
+    }
+
+    /* Announcement Sub-bar */
+    .announcement-bar {
+      background-color: #12110E;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      padding: 9px 0;
+    }
+
+    .announcement-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .announcement-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot-gold {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-primary);
+    }
+
+    .announcement-left strong {
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    .announcement-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .announcement-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+    }
+
+    .announcement-item.wa-link {
+      color: #4ADE80;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+    .hero {
+      position: relative;
+      padding: 72px 0 64px;
+      background: radial-gradient(circle at 78% 45%, rgba(242, 199, 68, 0.12) 0%, rgba(13, 12, 10, 0) 50%),
+                  linear-gradient(180deg, #12110E 0%, #0D0C0A 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(242, 199, 68, 0.08);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-primary);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 50px);
+      font-weight: 500;
+      line-height: 1.16;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    .btn-primary-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--gold-primary);
+      color: #0D0C0A;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-primary-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-wa-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      color: #4ADE80;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 13px 22px;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-wa-outline:hover {
+      background-color: rgba(37, 211, 102, 0.18);
+      border-color: #4ADE80;
+    }
+
+    /* Hero 4 Mini Features */
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hero-feat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .hero-feat-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background-color: rgba(242, 199, 68, 0.1);
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hero-feat-text h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .hero-feat-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Hero Right Circular Jar Showcase */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-circle-frame {
+      position: relative;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      padding: 10px;
+      background: linear-gradient(145deg, rgba(242, 199, 68, 0.45), rgba(242, 199, 68, 0.05));
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 50px rgba(242, 199, 68, 0.12);
+    }
+
+    .hero-circle-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background-color: #FFFFFF;
+    }
+
+    .hero-circle-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 84%;
+      background: rgba(18, 17, 14, 0.94);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+    }
+
+    .floating-info h5 {
+      font-family: var(--font-serif);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .floating-info span {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+      display: block;
+    }
+
+    .floating-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-primary);
+    }
+
+    /* =========================================
+       QUICK SECTION SUB-NAV BAR
+    ========================================= */
+    .sub-nav {
+      background-color: #11100D;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 0;
+    }
+
+    .sub-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .sub-nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sub-tab {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .sub-tab.active, .sub-tab:hover {
+      background-color: rgba(242, 199, 68, 0.14);
+      color: var(--gold-primary);
+    }
+
+    .sub-nav-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--text-secondary);
+    }
+
+    /* =========================================
+       CATALOG SECTION
+    ========================================= */
+    .catalog-section {
+      padding: 64px 0 72px;
+    }
+
+    .catalog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      max-width: 480px;
+    }
+
+    /* Search & Filter Controls */
+    .catalog-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      width: 240px;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 15px;
+      height: 15px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background-color: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 12.5px;
+      padding: 10px 14px 10px 38px;
+      border-radius: var(--radius-pill);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--border-gold);
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background-color: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .filter-btn:hover {
+      color: var(--text-primary);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background-color: var(--gold-primary);
+      color: #0D0C0A;
+      font-weight: 700;
+      border-color: var(--gold-primary);
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      height: 215px;
+      overflow: hidden;
+      background-color: #1F1E1A;
+    }
+
+    .card-img-wrap.white-bg {
+      background-color: #F9F8F6;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card-img-wrap.white-bg img {
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .product-card:hover .card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .badge-top-left {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-dark {
+      background-color: rgba(13, 12, 10, 0.88);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .badge-gold {
+      background-color: var(--gold-primary);
+      color: #0D0C0A;
+    }
+
+    .badge-top-right {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      background-color: rgba(13, 12, 10, 0.85);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 9px;
+      border-radius: 4px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .card-category {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+    }
+
+    .spice-meter {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 11px;
+    }
+
+    .spice-active {
+      color: #EF4444;
+    }
+
+    .spice-inactive {
+      color: #3A3832;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .card-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      margin-bottom: 14px;
+    }
+
+    .card-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-primary);
+    }
+
+    .card-stock {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .btn-card-detail {
+      width: 100%;
+      background-color: var(--gold-primary);
+      color: #0D0C0A;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 11px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      display: block;
+    }
+
+    .btn-card-detail:hover {
+      background-color: var(--gold-hover);
+    }
+
+    /* =========================================
+       HERITAGE / CRAFT SECTION
+    ========================================= */
+    .heritage-section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border-subtle);
+      background-color: #0F0E0C;
+    }
+
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .heritage-img-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      height: 380px;
+    }
+
+    .heritage-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .heritage-img-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(13, 12, 10, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+    }
+
+    .heritage-img-overlay span {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .heritage-img-overlay h4 {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .heritage-img-overlay p {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .heritage-content h2 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      line-height: 1.22;
+      margin-bottom: 18px;
+    }
+
+    .heritage-content p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .heritage-content strong {
+      color: var(--gold-primary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    /* =========================================
+       THREE PILLARS SECTION
+    ========================================= */
+    .pillars-section {
+      padding: 56px 0 76px;
+      background-color: #0F0E0C;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+    }
+
+    .pillar-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: rgba(242, 199, 68, 0.12);
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .pillar-card p {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .footer {
+      background-color: #0A0908;
+      border-top: 1px solid var(--border-subtle);
+      padding: 64px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1.1fr 0.8fr 1fr;
+      gap: 36px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+    }
+
+    .footer-desc {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .footer-heritage-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--gold-muted);
+    }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .footer-wa-card {
+      background-color: #131915;
+      border: 1px solid rgba(37, 211, 102, 0.28);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-top: 14px;
+      display: block;
+    }
+
+    .footer-wa-card:hover {
+      border-color: #4ADE80;
+    }
+
+    .footer-wa-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4ADE80;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .footer-wa-card p {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-primary);
+    }
+
+    .ops-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .ops-list strong {
+      color: var(--text-primary);
+    }
+
+    .ops-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(242, 199, 68, 0.08);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-primary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 1024px) {
+      .hero-grid, .heritage-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-grid, .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-circle-frame {
+        width: 320px;
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      .product-grid, .pillars-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       HEADER NAVBAR (MULTI-PAGE LINKS)
+  ========================================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <!-- Brand Logo Asli -->
+      <a href="index.html" class="brand">
+        <img src="asset/Logo Qoe dalam Lencana Lingkaran celar.png" alt="PRIMA - Qoe Logo" class="brand-logo-img" />
+        <div class="brand-text-wrap">
+          <div class="brand-title-row">
+            <span class="brand-name">PRIMA QOE</span>
+            <span class="brand-badge">Artisanal</span>
+          </div>
+          <span class="brand-tagline">Sambal Kecombrang & Gourmet Snacks</span>
+        </div>
+      </a>
+
+      <!-- Multi-Page Navigation -->
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Admin Portal Button -->
+      <a href="admin.html" class="btn-admin">
+        <i data-lucide="shield" style="width:14px;height:14px;"></i>
+        Admin Portal
+      </a>
+    </div>
+  </header>
+
+  <!-- Sub-header Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-left">
+        <span class="dot-gold"></span>
+        <span><strong>Direct Concierge Service:</strong> No supermarket markups or carts. Fresh batch handcrafted on order.</span>
+      </div>
+      <div class="announcement-right">
+        <span class="announcement-item">
+          <i data-lucide="map-pin" style="width:13px;height:13px;color:var(--gold-primary);"></i>
+          Dispatch Nationwide from Bondowoso
+        </span>
+        <a href="https://wa.me/6281288997766" target="_blank" class="announcement-item wa-link">
+          <i data-lucide="message-circle" style="width:13px;height:13px;"></i>
+          WhatsApp: +62 812-8899-7766
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       HERO SECTION
+  ========================================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <!-- Left Column -->
+      <div>
+        <div class="hero-badge">
+          <i data-lucide="sparkles" style="width:12px;height:12px;"></i>
+          Prestige Indonesian Gastronomy • Small-Batch No. 14
+        </div>
+        <h1 class="hero-title">Artisanal Sambal Kecombrang &amp; Handcrafted Gourmet Delicacies</h1>
+        <p class="hero-desc">
+          Authentic Indonesian culinary heritage elevated through contemporary gastronomy and premium ingredients. Hand-picked wild torch ginger flowers from Bondowoso highlands, slow-cooked in small batches with zero artificial preservatives.
+        </p>
+
+        <div class="hero-actions">
+          <a href="products.html" class="btn-primary-gold">
+            Explore Products
+            <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+          </a>
+          <a href="https://wa.me/6281288997766?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20konsultasi%20pesanan." target="_blank" class="btn-wa-outline">
+            <i data-lucide="message-circle" style="width:16px;height:16px;"></i>
+            Direct WhatsApp Concierge
+          </a>
+        </div>
+
+        <!-- 4 Mini Highlights -->
+        <div class="hero-features">
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i data-lucide="leaf" style="width:14px;height:14px;"></i></div>
+            <div class="hero-feat-text">
+              <h4>100% Fresh</h4>
+              <p>Wild Torch Ginger</p>
+            </div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i data-lucide="flame" style="width:14px;height:14px;"></i></div>
+            <div class="hero-feat-text">
+              <h4>Small-Batch</h4>
+              <p>Slow-Cooked Daily</p>
+            </div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i data-lucide="shield-check" style="width:14px;height:14px;"></i></div>
+            <div class="hero-feat-text">
+              <h4>Airtight Glass</h4>
+              <p>Heat-Sealed Jars</p>
+            </div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i data-lucide="zap" style="width:14px;height:14px;"></i></div>
+            <div class="hero-feat-text">
+              <h4>Zero-Auto Cart</h4>
+              <p>Pure Bespoke Care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Circular Hero Jar (asset/sambel.jpeg) -->
+      <div class="hero-visual">
+        <div class="hero-circle-frame">
+          <div class="hero-circle-inner">
+            <img src="asset/sambel.jpeg" alt="Prima Qoe Premium Quality Sambal Kecombrang" />
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-info">
+              <h5>Grand Reserve Sambal</h5>
+              <span>Net Wt. 200g • Handcrafted in Bondowoso</span>
+            </div>
+            <div class="floating-price">Rp 45,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Section Sub-Nav -->
+  <div class="sub-nav">
+    <div class="container sub-nav-inner">
+      <div class="sub-nav-tabs">
+        <a href="#catalog" class="sub-tab active">Catalog</a>
+        <a href="#heritage" class="sub-tab">The Heritage</a>
+        <a href="#pillars" class="sub-tab">Pillars</a>
+        <a href="contact.html" class="sub-tab">Concierge Inquiry</a>
+      </div>
+      <div class="sub-nav-note">
+        <i data-lucide="lock" style="width:13px;height:13px;color:var(--gold-primary);"></i>
+        Secure Direct WhatsApp Messaging
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       CURATED ARTISANAL COLLECTION (CATALOG)
+  ========================================= -->
+  <section id="catalog" class="catalog-section">
+    <div class="container">
+      <div class="catalog-header">
+        <div>
+          <div class="eyebrow">
+            <i data-lucide="award" style="width:13px;height:13px;"></i>
+            Artisanal Pantry
+          </div>
+          <h2 class="section-title">Curated Artisanal Collection</h2>
+          <p class="section-subtitle">
+            Select any gourmet item to inspect flavor aromatics, profiles, or trigger instant bespoke WhatsApp ordering without complex cart steps.
+          </p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="search-box">
+            <i data-lucide="search"></i>
+            <input type="text" id="searchInput" placeholder="Search gourmet sambal or snack..." />
+          </div>
+
+          <div class="filter-pills" id="filterPills">
+            <button class="filter-btn active" data-filter="all">All Delicacies</button>
+            <button class="filter-btn" data-filter="sambal">Artisanal Sambal</button>
+            <button class="filter-btn" data-filter="snacks">Crispy Snacks</button>
+            <button class="filter-btn" data-filter="bundles">Gourmet Bundles</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Grid (6 Cards) -->
+      <div class="product-grid" id="productGrid">
+        
+        <!-- Card 1: Sambal Original (asset/sambel.jpeg) -->
+        <article class="product-card" data-category="sambal" data-title="Sambal Kecombrang Original">
+          <div class="card-img-wrap white-bg">
+            <span class="badge-top-left badge-dark">Signature Classic</span>
+            <span class="badge-top-right">200g Glass Jar</span>
+            <img src="asset/sambel.jpeg" alt="Sambal Kecombrang Original" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Artisanal Sambal</span>
+              <div class="spice-meter" title="Spice Level: 4/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-inactive">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Sambal Kecombrang Original</h3>
+            <p class="card-desc">
+              Fresh torch ginger blossoms slow-simmered with sun-ripened bird's eye chilies, shallots, and cold-pressed oil.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 45,000</span>
+              <span class="card-stock">Ready to Dispatch</span>
+            </div>
+            <a href="products.html#original" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Sambal Cumi Asin (asset/sambel.jpeg) -->
+        <article class="product-card" data-category="sambal" data-title="Sambal Kecombrang Cumi Asin">
+          <div class="card-img-wrap white-bg">
+            <span class="badge-top-left badge-gold">Bestseller</span>
+            <span class="badge-top-right">200g Glass Jar</span>
+            <img src="asset/sambel.jpeg" alt="Sambal Kecombrang Cumi Asin" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Artisanal Sambal</span>
+              <div class="spice-meter" title="Spice Level: 5/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Sambal Kecombrang Cumi Asin</h3>
+            <p class="card-desc">
+              Tender cured baby salted squid infused with aromatic torch ginger blossoms, sweet shallots, and warm spices.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 55,000</span>
+              <span class="card-stock">Fresh Batch Ready</span>
+            </div>
+            <a href="products.html#cumi" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Sambal Teri Medan (asset/sambel.jpeg) -->
+        <article class="product-card" data-category="sambal" data-title="Sambal Kecombrang Teri Medan">
+          <div class="card-img-wrap white-bg">
+            <span class="badge-top-left badge-dark">Heritage Recipe</span>
+            <span class="badge-top-right">200g Glass Jar</span>
+            <img src="asset/sambel.jpeg" alt="Sambal Kecombrang Teri Medan" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Artisanal Sambal</span>
+              <div class="spice-meter" title="Spice Level: 4/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-inactive">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Sambal Kecombrang Teri Medan</h3>
+            <p class="card-desc">
+              Crispy golden Medan anchovies folded into vibrant wild kecombrang petals, kaffir lime leaves, and red chilies.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 50,000</span>
+              <span class="card-stock">Daily Small-Batch</span>
+            </div>
+            <a href="products.html#teri" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+        <!-- Card 4: Kripik (asset/kripik.jpeg) -->
+        <article class="product-card" data-category="snacks" data-title="Crispy Cheese & Onion Crackers">
+          <div class="card-img-wrap white-bg">
+            <span class="badge-top-left badge-dark">Crunchy Favorite</span>
+            <span class="badge-top-right">250g Pouch</span>
+            <img src="asset/kripik.jpeg" alt="Crispy Cheese & Onion Crackers" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Crispy Snacks</span>
+              <div class="spice-meter" title="Spice Level: 1/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-inactive">🌶</span>
+                <span class="spice-inactive">🌶</span>
+                <span class="spice-inactive">🌶</span>
+                <span class="spice-inactive">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Crispy Cheese &amp; Onion Crackers</h3>
+            <p class="card-desc">
+              Golden bite-sized artisan squares baked with aged cheddar cheese, sweet caramelized onion, and garden parsley.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 38,000</span>
+              <span class="card-stock">Zero-Oil Spin Dried</span>
+            </div>
+            <a href="products.html#cheese" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+        <!-- Card 5: Tojin (asset/tojin.jpeg) -->
+        <article class="product-card" data-category="snacks" data-title="Spiced Caramel Chili Peanuts">
+          <div class="card-img-wrap white-bg">
+            <span class="badge-top-left badge-dark">Artisan Crunch</span>
+            <span class="badge-top-right">200g Pouch</span>
+            <img src="asset/tojin.jpeg" alt="Spiced Caramel Chili Peanuts" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Crispy Snacks</span>
+              <div class="spice-meter" title="Spice Level: 3/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-inactive">🌶</span>
+                <span class="spice-inactive">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Spiced Caramel Chili Peanuts</h3>
+            <p class="card-desc">
+              Crunchy roasted peanuts glazed in fragrant kaffir lime leaves, red chili aromatics, and savory palm sugar glaze.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 35,000</span>
+              <span class="card-stock">Naturally Vegan</span>
+            </div>
+            <a href="products.html#peanuts" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+        <!-- Card 6: Gourmet Bundle -->
+        <article class="product-card" data-category="bundles" data-title="Signature Royal Gourmet Bundle">
+          <div class="card-img-wrap">
+            <span class="badge-top-left badge-gold">Gift Edition</span>
+            <span class="badge-top-right">4-Piece Hamper</span>
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80" alt="Signature Royal Gourmet Bundle" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">Gourmet Bundles</span>
+              <div class="spice-meter" title="Spice Level: 3/5">
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-active">🌶</span>
+                <span class="spice-inactive">🌶</span>
+                <span class="spice-inactive">🌶</span>
+              </div>
+            </div>
+            <h3 class="card-title">Signature Royal Gourmet Bundle</h3>
+            <p class="card-desc">
+              Includes 2 Sambal Jars (Original &amp; Cumi Asin) &amp; 2 Snack Pouches (Cheese Crackers + Chili Peanuts) in a gift box.
+            </p>
+            <div class="card-price-row">
+              <span class="card-price">Rp 165,000</span>
+              <span class="card-stock">Luxury Gift Box</span>
+            </div>
+            <a href="products.html#bundle" class="btn-card-detail">View Details</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CULINARY HERITAGE SECTION (BONDOWOSO)
+  ========================================= -->
+  <section id="heritage" class="heritage-section">
+    <div class="container heritage-grid">
+      <!-- Left Image Card -->
+      <div class="heritage-img-card">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80" alt="Wild Torch Ginger Flower Harvest Bondowoso" />
+        <div class="heritage-img-overlay">
+          <span>Authentic Botanical Ingredient</span>
+          <h4>Ijen Highland Volcanic Soil, Bondowoso</h4>
+          <p>Harvested at 5:30 AM daily in Bondowoso to preserve essential floral oils.</p>
+        </div>
+      </div>
+
+      <!-- Right Story Content -->
+      <div class="heritage-content">
+        <div class="eyebrow">
+          <i data-lucide="book-open" style="width:13px;height:13px;"></i>
+          Culinary Heritage
+        </div>
+        <h2>The Craft of Torch Ginger: Bondowoso Culinary Excellence</h2>
+        <p>
+          At PRIMA QOE, we elevate <strong>Bunga Kecombrang</strong> (Torch Ginger / <em>Etlingera elatior</em>)—an aromatic jewel that has graced Archipelago feasts for centuries. Its unmistakable floral-citrus vibrancy cuts through rich gravies, transforming traditional condiment making into fine gastronomy.
+        </p>
+        <p>
+          Every batch begins with hand-sheared blossoms harvested from fertile volcanic agroforestry plots in the highland valleys of <strong>Bondowoso, East Java</strong>. We slow-simmer the petals alongside sun-dried sea salt and refined cold-pressed oils. No MSG, no synthetic colorings, and no artificial thickeners. Only pure culinary craft, prepared in hygienic small quantities to preserve aromatic freshness at your table.
+        </p>
+
+        <!-- 3 Stat Boxes -->
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">0%</div>
+            <div class="stat-label">Artificial Additives</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">4h</div>
+            <div class="stat-label">Slow-Kettle Simmer</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Artisan Handcrafted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       THREE BRAND PILLARS
+  ========================================= -->
+  <section id="pillars" class="pillars-section">
+    <div class="container pillars-grid">
+      <!-- Pillar 1 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="award" style="width:18px;height:18px;"></i>
+        </div>
+        <h3>Culinary Authenticity</h3>
+        <p>
+          Time-honored family recipes from Bondowoso crafted without shortcuts—real shallots, fiery chilies, authentic kaffir lime aromatics, and full-bodied torch ginger petals.
+        </p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
+        </div>
+        <h3>Hygienic Production</h3>
+        <p>
+          Every jar undergoes strict vacuum-sealing in sanitized, food-grade glass containers, ensuring 3 months of sealed shelf life without chemical stabilizers.
+        </p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="truck" style="width:18px;height:18px;"></i>
+        </div>
+        <h3>Fresh On-Demand</h3>
+        <p>
+          By avoiding impersonal retail warehouses, your order is fulfilled fresh from our weekly Bondowoso small-batch kitchen and directly coordinated via WhatsApp concierge.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer-brand-title">PRIMA QOE</div>
+          <p class="footer-desc">
+            Handcrafted authentic sambal kecombrang and premium heritage snacks from Bondowoso made with honest ingredients, uncompromising hygiene, and timeless Indonesian culinary artistry.
+          </p>
+          <div class="footer-heritage-tag">
+            <i data-lucide="flame" style="width:14px;height:14px;"></i>
+            Authentic Bondowoso Heritage Recipe
+          </div>
+        </div>
+
+        <!-- Col 2: Direct Concierge -->
+        <div>
+          <div class="footer-col-title">Direct Concierge</div>
+          <p class="footer-desc" style="margin-bottom:0;">
+            We deliberately offer no impersonal automated cart. Every jar is built fresh in Bondowoso and curated through personalized direct messaging.
+          </p>
+          <a href="https://wa.me/6281288997766?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20memesan." target="_blank" class="footer-wa-card">
+            <div class="footer-wa-top">
+              <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
+              WhatsApp Direct Order
+            </div>
+            <p>Zero-friction ordering. Connect with our culinary concierge.</p>
+          </a>
+        </div>
+
+        <!-- Col 3: Quick Navigation (Multi-page) -->
+        <div>
+          <div class="footer-col-title">Quick Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">→ Home</a></li>
+            <li><a href="products.html">→ Gourmet Catalog</a></li>
+            <li><a href="about.html">→ Heritage &amp; Story</a></li>
+            <li><a href="contact.html">→ Contact &amp; Ordering</a></li>
+            <li><a href="admin.html">→ Admin Workspace</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Kitchen & Operations -->
+        <div>
+          <div class="footer-col-title">Kitchen &amp; Operations</div>
+          <ul class="ops-list">
+            <li><strong>Kitchen Base:</strong> Bondowoso, East Java</li>
+            <li><strong>Operating Hours:</strong> Mon – Sat, 08:00 – 18:00 WIB</li>
+            <li><strong>Direct Dispatch:</strong> Bondowoso &amp; Nationwide Express</li>
+            <li><strong>Policy:</strong> WhatsApp Concierge Only</li>
+          </ul>
+          <div class="ops-badge">
+            <i data-lucide="check-circle-2" style="width:13px;height:13px;"></i>
+            No Automated Cart • 100% Bespoke
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 PRIMA QOE Artisanal Gourmet — Bondowoso, Jawa Timur. All rights reserved.</span>
+        <span>Crafted for Authentic Indonesian Culinary Excellence</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       JAVASCRIPT (ICONS, SEARCH & CATEGORY FILTER)
+  ========================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Catalog Search & Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const productCards = document.querySelectorAll('.product-card');
+
+    let currentFilter = 'all';
+
+    function filterProducts() {
+      const query = searchInput.value.toLowerCase().trim();
+
+      productCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const title = card.getAttribute('data-title').toLowerCase();
+        const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+
+        const matchesCategory = (currentFilter === 'all' || category === currentFilter);
+        const matchesSearch = (title.includes(query) || desc.includes(query));
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        filterProducts();
+      });
+    });
+
+    searchInput.addEventListener('input', filterProducts);
+  </script>
+</body>
+</html>
