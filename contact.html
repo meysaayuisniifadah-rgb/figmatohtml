@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Direct Ordering — PRIMA QOE | Bondowoso</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --md-bg: #0B0A08;
+      --md-surface: #11100D;
+      --md-surface-low: #14130F;
+      --md-surface-container: #181712;
+      --md-surface-high: #201E17;
+      --md-surface-highest: #27251C;
+      --md-on-surface: #F4F1EA;
+      --md-on-surface-variant: #B3AEA2;
+      --md-outline: #3B372B;
+      --md-outline-variant: rgba(212, 175, 55, 0.22);
+      --md-primary: #D4AF37;
+      --md-primary-light: #E8CA68;
+      --md-on-primary: #141105;
+      --md-primary-container: rgba(212, 175, 55, 0.14);
+      --md-secondary-gold: #9A7B2C;
+      --md-wa: #25D366;
+      --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display-serif: 'Playfair Display', Georgia, serif;
+      --shape-xs: 4px;
+      --shape-sm: 8px;
+      --shape-md: 12px;
+      --shape-lg: 16px;
+      --shape-xl: 20px;
+      --shape-full: 9999px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--md-bg);
+      color: var(--md-on-surface);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+    button, input, select, textarea { font-family: var(--font-sans); transition: all 0.2s ease; }
+    button { cursor: pointer; border: none; outline: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top App Bar (M3) */
+    .navbar {
+      background-color: rgba(11, 10, 8, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--md-outline-variant);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--shape-full);
+      object-fit: cover;
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--md-primary);
+      flex-shrink: 0;
+    }
+
+    .brand-title-row { display: flex; align-items: center; gap: 8px; }
+
+    .brand-name {
+      font-family: var(--font-display-serif);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.05em;
+      color: var(--md-on-surface);
+    }
+
+    .brand-badge {
+      background-color: var(--md-primary-container);
+      color: var(--md-primary-light);
+      border: 1px solid var(--md-outline-variant);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 7px;
+      border-radius: var(--shape-xs);
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      color: var(--md-on-surface-variant);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      padding: 4px;
+      border-radius: var(--shape-full);
+      gap: 4px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--md-on-surface-variant);
+      padding: 7px 18px;
+      border-radius: var(--shape-full);
+    }
+
+    .nav-links a:hover { color: var(--md-on-surface); }
+
+    .nav-links a.active {
+      background-color: var(--md-surface-highest);
+      color: var(--md-primary-light);
+      border: 1px solid var(--md-outline-variant);
+    }
+
+    .btn-admin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      color: var(--md-on-surface-variant);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 9px 16px;
+      border-radius: var(--shape-full);
+    }
+
+    .btn-admin:hover {
+      border-color: var(--md-primary);
+      color: var(--md-primary-light);
+    }
+
+    .announcement-bar {
+      background-color: var(--md-surface-low);
+      border-bottom: 1px solid var(--md-outline-variant);
+      font-size: 11.5px;
+      color: var(--md-on-surface-variant);
+      padding: 9px 0;
+    }
+
+    .announcement-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .announcement-left { display: flex; align-items: center; gap: 8px; }
+
+    .dot-gold {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--md-primary);
+    }
+
+    .announcement-left strong { color: var(--md-primary-light); font-weight: 500; }
+
+    .announcement-right { display: flex; align-items: center; gap: 20px; }
+
+    .announcement-item { display: inline-flex; align-items: center; gap: 6px; color: var(--md-on-surface-variant); }
+    .announcement-item.wa-link { color: #4ADE80; font-weight: 500; }
+
+    /* Page Banner M3 */
+    .page-banner {
+      padding: 56px 0 44px;
+      background: radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.12) 0%, rgba(11, 10, 8, 0) 55%),
+                  linear-gradient(180deg, #12110D 0%, #0B0A08 100%);
+      border-bottom: 1px solid var(--md-outline-variant);
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--md-on-surface-variant);
+      margin-bottom: 16px;
+    }
+
+    .breadcrumb a:hover { color: var(--md-primary-light); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--md-primary);
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 500;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-title span { color: var(--md-primary); }
+
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--md-on-surface-variant);
+      max-width: 640px;
+    }
+
+    /* Contact & Concierge Grid */
+    .contact-section { padding: 64px 0 76px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .info-stack { display: flex; flex-direction: column; gap: 18px; }
+
+    .info-card {
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-lg);
+      padding: 22px;
+    }
+
+    .info-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--shape-sm);
+      background-color: var(--md-primary-container);
+      color: var(--md-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-card h3 { font-size: 17px; font-weight: 500; color: var(--md-on-surface); }
+    .info-card p { font-size: 12.5px; color: var(--md-on-surface-variant); line-height: 1.6; }
+
+    .wa-direct-box {
+      background-color: #131915;
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      border-radius: var(--shape-lg);
+      padding: 20px;
+    }
+
+    .wa-direct-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4ADE80;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .wa-direct-box p { font-size: 12.5px; color: var(--md-on-surface-variant); margin-bottom: 14px; }
+
+    .btn-wa-green {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #25D366;
+      color: #08120B;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 18px;
+      border-radius: var(--shape-full);
+    }
+
+    .btn-wa-green:hover { filter: brightness(1.06); }
+
+    /* M3 Outlined Form Card */
+    .form-card {
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-xl);
+      padding: 28px;
+    }
+
+    .form-card h2 { font-size: 24px; font-weight: 500; margin-bottom: 6px; }
+    .form-card .form-sub { font-size: 13px; color: var(--md-on-surface-variant); margin-bottom: 24px; }
+
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background-color: var(--md-surface-high);
+      border: 1px solid var(--md-outline);
+      color: var(--md-on-surface);
+      font-size: 13px;
+      padding: 11px 14px;
+      border-radius: var(--shape-sm);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--md-primary); }
+
+    .form-group textarea { min-height: 105px; resize: vertical; }
+
+    .btn-submit-gold {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--md-primary);
+      color: var(--md-on-primary);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 13px 20px;
+      border-radius: var(--shape-full);
+    }
+
+    .btn-submit-gold:hover { background-color: var(--md-primary-light); }
+
+    .form-note {
+      margin-top: 12px;
+      font-size: 11.5px;
+      color: var(--md-on-surface-variant);
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--md-bg);
+      border-top: 1px solid var(--md-outline-variant);
+      padding: 64px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1.1fr 0.8fr 1fr;
+      gap: 36px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--md-outline-variant);
+    }
+
+    .footer-brand-title { font-family: var(--font-display-serif); font-size: 16px; font-weight: 700; letter-spacing: 0.05em; color: var(--md-primary-light); margin-bottom: 14px; }
+    .footer-desc { font-size: 12.5px; color: var(--md-on-surface-variant); line-height: 1.65; margin-bottom: 16px; }
+    .footer-heritage-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--md-secondary-gold); }
+
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--md-on-surface); margin-bottom: 16px; }
+
+    .footer-wa-card {
+      background-color: #131915;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: var(--shape-md);
+      padding: 14px;
+      margin-top: 14px;
+      display: block;
+    }
+
+    .footer-wa-card:hover { border-color: #4ADE80; }
+    .footer-wa-top { display: flex; align-items: center; gap: 8px; color: #4ADE80; font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+    .footer-wa-card p { font-size: 11px; color: var(--md-on-surface-variant); line-height: 1.45; }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 12.5px; color: var(--md-on-surface-variant); }
+    .footer-links a:hover { color: var(--md-primary-light); }
+
+    .ops-list { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: var(--md-on-surface-variant); margin-bottom: 16px; }
+    .ops-list strong { color: var(--md-on-surface); font-weight: 500; }
+
+    .ops-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--md-primary-container);
+      border: 1px solid var(--md-outline-variant);
+      color: var(--md-primary-light);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: var(--shape-sm);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11.5px;
+      color: var(--md-on-surface-variant);
+    }
+
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .form-row-2, .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="asset/Logo Qoe dalam Lencana Lingkaran celar.png" alt="PRIMA QOE Logo" class="brand-logo-img" />
+        <div class="brand-text-wrap">
+          <div class="brand-title-row">
+            <span class="brand-name">PRIMA QOE</span>
+            <span class="brand-badge">Artisanal</span>
+          </div>
+          <span class="brand-tagline">Sambal Kecombrang & Gourmet Snacks</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <a href="admin.html" class="btn-admin">
+        <i data-lucide="shield" style="width:14px;height:14px;"></i>
+        Admin Portal
+      </a>
+    </div>
+  </header>
+
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-left">
+        <span class="dot-gold"></span>
+        <span><strong>Direct Concierge Service:</strong> No supermarket markups or carts. Fresh batch handcrafted on order.</span>
+      </div>
+      <div class="announcement-right">
+        <span class="announcement-item">
+          <i data-lucide="map-pin" style="width:13px;height:13px;color:var(--md-primary);"></i>
+          Dispatch Nationwide from Bondowoso
+        </span>
+        <a href="https://wa.me/628123416669" target="_blank" class="announcement-item wa-link">
+          <i data-lucide="message-circle" style="width:13px;height:13px;"></i>
+          WhatsApp: +62 812-3416-6669
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color:var(--md-primary-light);">Contact</span>
+      </div>
+      <div class="eyebrow">
+        <i data-lucide="message-square" style="width:13px;height:13px;"></i>
+        Bondowoso Concierge &amp; Ordering
+      </div>
+      <h1 class="page-title">Contact &amp; <span>Direct Order Concierge</span></h1>
+      <p class="page-subtitle">
+        Pesan langsung sambal kecombrang, camilan renyah, atau paket hampers dari dapur PRIMA QOE di Bondowoso melalui WhatsApp tanpa keranjang belanja otomatis.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <div class="info-stack">
+        <div class="info-card">
+          <div class="info-card-top">
+            <div class="info-icon"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></div>
+            <h3>Kitchen &amp; Dispatch Base</h3>
+          </div>
+          <p>
+            <strong>Bondowoso, Jawa Timur</strong><br>
+            Melayani pengiriman area Bondowoso serta ekspedisi ke berbagai kota di Indonesia dengan kemasan aman.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-top">
+            <div class="info-icon"><i data-lucide="clock" style="width:18px;height:18px;"></i></div>
+            <h3>Concierge &amp; Kitchen Hours</h3>
+          </div>
+          <p>
+            <strong>Senin – Sabtu:</strong> 08.00 – 18.00 WIB<br>
+            <strong>Minggu:</strong> Persiapan bahan &amp; rekap pesanan terjadwal.
+          </p>
+        </div>
+
+        <div class="wa-direct-box">
+          <div class="wa-direct-header">
+            <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+            WhatsApp Concierge (+62 812-3416-6669)
+          </div>
+          <p>
+            Ingin langsung menanyakan stok batch terbaru atau ongkos kirim dari Bondowoso? Klik tombol di bawah ini.
+          </p>
+          <a href="https://wa.me/628123416669?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20bertanya%20mengenai%20pesanan." target="_blank" class="btn-wa-green">
+            <i data-lucide="message-circle" style="width:16px;height:16px;"></i>
+            Buka Chat WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Kirim Pesan / Format Pesanan</h2>
+        <p class="form-sub">
+          Isi detail di bawah ini—pesan otomatis tersusun rapi dan membuka WhatsApp PRIMA QOE Bondowoso.
+        </p>
+
+        <form id="conciergeForm">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="customerName">Nama Anda</label>
+              <input type="text" id="customerName" placeholder="Contoh: Rina Wijaya" required />
+            </div>
+            <div class="form-group">
+              <label for="customerCity">Kota Tujuan Pengiriman</label>
+              <input type="text" id="customerCity" placeholder="Contoh: Bondowoso / Surabaya / Malang" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="productSelect">Pilih Varian / Keperluan</label>
+              <select id="productSelect">
+                <option value="Sambal Kecombrang Original (Rp 45.000)">Sambal Kecombrang Original — Rp 45.000</option>
+                <option value="Sambal Kecombrang Cumi Asin (Rp 55.000)">Sambal Kecombrang Cumi Asin — Rp 55.000</option>
+                <option value="Sambal Kecombrang Teri Medan (Rp 50.000)">Sambal Kecombrang Teri Medan — Rp 50.000</option>
+                <option value="Crispy Cheese & Onion Crackers (Rp 38.000)">Crispy Cheese &amp; Onion Crackers — Rp 38.000</option>
+                <option value="Spiced Caramel Chili Peanuts (Rp 35.000)">Spiced Caramel Chili Peanuts — Rp 35.000</option>
+                <option value="Signature Royal Gourmet Bundle (Rp 165.000)">Signature Royal Gourmet Bundle — Rp 165.000</option>
+                <option value="Konsultasi & Pertanyaan Umum">Konsultasi &amp; Pertanyaan Umum</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qtyInput">Jumlah (pcs / jar)</label>
+              <input type="number" id="qtyInput" min="1" value="1" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notesInput">Catatan Tambahan / Alamat Singkat</label>
+            <textarea id="notesInput" placeholder="Tulis catatan level pedas, permintaan hampers, atau informasi tambahan..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-gold">
+            <i data-lucide="send" style="width:16px;height:16px;"></i>
+            Kirim ke WhatsApp PRIMA QOE
+          </button>
+
+          <p class="form-note">
+            Tanpa pembayaran otomatis di website • Konfirmasi stok &amp; ongkir langsung via WhatsApp.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">PRIMA QOE</div>
+          <p class="footer-desc">
+            Handcrafted authentic sambal kecombrang and premium heritage snacks from Bondowoso made with honest ingredients and uncompromising hygiene.
+          </p>
+          <div class="footer-heritage-tag">
+            <i data-lucide="flame" style="width:14px;height:14px;"></i>
+            Authentic Bondowoso Heritage Recipe
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Direct Concierge</div>
+          <p class="footer-desc" style="margin-bottom:0;">
+            Every jar and snack pouch is prepared fresh in Bondowoso and coordinated through personalized WhatsApp messaging.
+          </p>
+          <a href="https://wa.me/628123416669?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20memesan." target="_blank" class="footer-wa-card">
+            <div class="footer-wa-top">
+              <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
+              WhatsApp Direct Order
+            </div>
+            <p>Zero-friction ordering. Connect with our culinary concierge.</p>
+          </a>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quick Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">→ Home</a></li>
+            <li><a href="products.html">→ Gourmet Catalog</a></li>
+            <li><a href="about.html">→ Heritage &amp; Story</a></li>
+            <li><a href="contact.html">→ Contact &amp; Ordering</a></li>
+            <li><a href="admin.html">→ Admin Workspace</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kitchen &amp; Operations</div>
+          <ul class="ops-list">
+            <li><strong>Kitchen Base:</strong> Bondowoso, East Java</li>
+            <li><strong>Operating Hours:</strong> Mon – Sat, 08:00 – 18:00 WIB</li>
+            <li><strong>Direct Dispatch:</strong> Bondowoso &amp; Nationwide Express</li>
+            <li><strong>Policy:</strong> WhatsApp Concierge Only</li>
+          </ul>
+          <div class="ops-badge">
+            <i data-lucide="check-circle-2" style="width:13px;height:13px;"></i>
+            No Automated Cart • 100% Bespoke
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 PRIMA QOE Artisanal Gourmet — Bondowoso, Jawa Timur. All rights reserved.</span>
+        <span>Crafted for Authentic Indonesian Culinary Excellence</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const conciergeForm = document.getElementById('conciergeForm');
+    conciergeForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const city = document.getElementById('customerCity').value.trim();
+      const product = document.getElementById('productSelect').value;
+      const qty = document.getElementById('qtyInput').value;
+      const notes = document.getElementById('notesInput').value.trim();
+
+      let message = `Halo PRIMA QOE Bondowoso, saya ingin menghubungi concierge:\n\n`;
+      message += `• Nama: ${name}\n`;
+      message += `• Kota Pengiriman: ${city}\n`;
+      message += `• Pilihan: ${product}\n`;
+      message += `• Jumlah: ${qty}\n`;
+      if (notes) {
+        message += `• Catatan: ${notes}\n`;
+      }
+
+      const waUrl = `https://wa.me/628123416669?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
