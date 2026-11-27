@@ -5,89 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us & Heritage — PRIMA QOE | Bondowoso</title>
 
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* =========================================
-       VARIABLES & RESET
-    ========================================= */
     :root {
-      --bg-primary: #0D0C0A;
-      --bg-secondary: #13120F;
-      --bg-card: #181713;
-      --bg-card-hover: #1E1D18;
-      --bg-input: #1B1A16;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-gold: rgba(242, 199, 68, 0.35);
-      --gold-primary: #F2C744;
-      --gold-hover: #E0B432;
-      --gold-muted: #B69538;
-      --text-primary: #F5F2EB;
-      --text-secondary: #A19D94;
-      --text-muted: #6E6A63;
-      --green-wa: #25D366;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --container-max: 1200px;
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-pill: 9999px;
+      --md-bg: #0B0A08;
+      --md-surface: #11100D;
+      --md-surface-low: #14130F;
+      --md-surface-container: #181712;
+      --md-surface-high: #201E17;
+      --md-surface-highest: #27251C;
+      --md-on-surface: #F4F1EA;
+      --md-on-surface-variant: #B3AEA2;
+      --md-outline: #3B372B;
+      --md-outline-variant: rgba(212, 175, 55, 0.22);
+      --md-primary: #D4AF37;
+      --md-primary-light: #E8CA68;
+      --md-on-primary: #141105;
+      --md-primary-container: rgba(212, 175, 55, 0.14);
+      --md-secondary-gold: #9A7B2C;
+      --md-wa: #25D366;
+      --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display-serif: 'Playfair Display', Georgia, serif;
+      --shape-xs: 4px;
+      --shape-sm: 8px;
+      --shape-md: 12px;
+      --shape-lg: 16px;
+      --shape-xl: 20px;
+      --shape-full: 9999px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
+      background-color: var(--md-bg);
+      color: var(--md-on-surface);
       font-family: var(--font-sans);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.25s ease;
-    }
-
-    button {
-      font-family: var(--font-sans);
-      cursor: pointer;
-      border: none;
-      outline: none;
-      transition: all 0.25s ease;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+    button { font-family: var(--font-sans); transition: all 0.2s ease; cursor: pointer; border: none; outline: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
-      max-width: var(--container-max);
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* =========================================
-       HEADER & TOP BAR
-    ========================================= */
+    /* Top App Bar (M3) */
     .navbar {
-      background-color: rgba(13, 12, 10, 0.92);
+      background-color: rgba(11, 10, 8, 0.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--md-outline-variant);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -100,58 +76,44 @@
       height: 76px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; }
 
     .brand-logo-img {
       width: 44px;
       height: 44px;
-      border-radius: 50%;
+      border-radius: var(--shape-full);
       object-fit: cover;
       background-color: #FFFFFF;
-      border: 1.5px solid var(--gold-primary);
-      box-shadow: 0 0 15px rgba(242, 199, 68, 0.25);
+      border: 1.5px solid var(--md-primary);
       flex-shrink: 0;
     }
 
-    .brand-text-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-title-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .brand-title-row { display: flex; align-items: center; gap: 8px; }
 
     .brand-name {
-      font-family: var(--font-serif);
+      font-family: var(--font-display-serif);
       font-weight: 700;
       font-size: 17px;
-      letter-spacing: 0.06em;
-      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      color: var(--md-on-surface);
     }
 
     .brand-badge {
-      background-color: rgba(242, 199, 68, 0.15);
-      color: var(--gold-primary);
-      border: 1px solid var(--border-gold);
+      background-color: var(--md-primary-container);
+      color: var(--md-primary-light);
+      border: 1px solid var(--md-outline-variant);
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      padding: 2px 6px;
-      border-radius: 4px;
+      padding: 2px 7px;
+      border-radius: var(--shape-xs);
       text-transform: uppercase;
     }
 
     .brand-tagline {
-      font-size: 9px;
-      letter-spacing: 0.14em;
-      color: var(--text-secondary);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      color: var(--md-on-surface-variant);
       text-transform: uppercase;
       margin-top: 2px;
     }
@@ -159,54 +121,52 @@
     .nav-links {
       display: flex;
       align-items: center;
-      background-color: #161511;
-      border: 1px solid var(--border-subtle);
-      padding: 5px;
-      border-radius: var(--radius-pill);
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      padding: 4px;
+      border-radius: var(--shape-full);
       gap: 4px;
     }
 
     .nav-links a {
       font-size: 13px;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: var(--md-on-surface-variant);
       padding: 7px 18px;
-      border-radius: var(--radius-pill);
+      border-radius: var(--shape-full);
     }
 
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
+    .nav-links a:hover { color: var(--md-on-surface); }
 
     .nav-links a.active {
-      background-color: #26241D;
-      color: var(--text-primary);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: var(--md-surface-highest);
+      color: var(--md-primary-light);
+      border: 1px solid var(--md-outline-variant);
     }
 
     .btn-admin {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: #161511;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      color: var(--md-on-surface-variant);
       font-size: 12px;
       font-weight: 500;
       padding: 9px 16px;
-      border-radius: var(--radius-pill);
+      border-radius: var(--shape-full);
     }
 
     .btn-admin:hover {
-      border-color: var(--border-gold);
-      color: var(--gold-primary);
+      border-color: var(--md-primary);
+      color: var(--md-primary-light);
     }
 
     .announcement-bar {
-      background-color: #12110E;
-      border-bottom: 1px solid var(--border-subtle);
+      background-color: var(--md-surface-low);
+      border-bottom: 1px solid var(--md-outline-variant);
       font-size: 11.5px;
-      color: var(--text-secondary);
+      color: var(--md-on-surface-variant);
       padding: 9px 0;
     }
 
@@ -218,50 +178,28 @@
       gap: 12px;
     }
 
-    .announcement-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .announcement-left { display: flex; align-items: center; gap: 8px; }
 
     .dot-gold {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: var(--gold-primary);
-      box-shadow: 0 0 8px var(--gold-primary);
+      background-color: var(--md-primary);
     }
 
-    .announcement-left strong {
-      color: var(--gold-primary);
-      font-weight: 600;
-    }
+    .announcement-left strong { color: var(--md-primary-light); font-weight: 500; }
 
-    .announcement-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+    .announcement-right { display: flex; align-items: center; gap: 20px; }
 
-    .announcement-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-secondary);
-    }
+    .announcement-item { display: inline-flex; align-items: center; gap: 6px; color: var(--md-on-surface-variant); }
+    .announcement-item.wa-link { color: #4ADE80; font-weight: 500; }
 
-    .announcement-item.wa-link {
-      color: #4ADE80;
-    }
-
-    /* =========================================
-       PAGE HEADER BANNER
-    ========================================= */
+    /* Page Banner M3 */
     .page-banner {
       padding: 56px 0 44px;
-      background: radial-gradient(circle at 80% 30%, rgba(242, 199, 68, 0.12) 0%, rgba(13, 12, 10, 0) 55%),
-                  linear-gradient(180deg, #12110E 0%, #0D0C0A 100%);
-      border-bottom: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.12) 0%, rgba(11, 10, 8, 0) 55%),
+                  linear-gradient(180deg, #12110D 0%, #0B0A08 100%);
+      border-bottom: 1px solid var(--md-outline-variant);
     }
 
     .breadcrumb {
@@ -269,67 +207,58 @@
       align-items: center;
       gap: 8px;
       font-size: 12px;
-      color: var(--text-muted);
+      color: var(--md-on-surface-variant);
       margin-bottom: 16px;
     }
 
-    .breadcrumb a:hover {
-      color: var(--gold-primary);
-    }
+    .breadcrumb a:hover { color: var(--md-primary-light); }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold-primary);
+      color: var(--md-primary);
       margin-bottom: 8px;
     }
 
     .page-title {
-      font-family: var(--font-serif);
       font-size: clamp(30px, 4vw, 44px);
       font-weight: 500;
-      line-height: 1.18;
-      margin-bottom: 14px;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
     }
+
+    .page-title span { color: var(--md-primary); }
 
     .page-subtitle {
       font-size: 14px;
-      color: var(--text-secondary);
+      color: var(--md-on-surface-variant);
       max-width: 640px;
     }
 
-    /* =========================================
-       STORY & ORIGIN SECTION
-    ========================================= */
-    .story-section {
-      padding: 68px 0;
-    }
+    /* Story Section */
+    .story-section { padding: 68px 0; }
 
-    .story-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 48px;
-      align-items: center;
-    }
+    .story-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
 
     .story-visual-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-lg);
-      padding: 28px;
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-xl);
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
 
     .story-img-frame {
-      background-color: #F9F8F6;
-      border-radius: var(--radius-md);
+      background-color: #FAF9F6;
+      border-radius: var(--shape-lg);
       height: 270px;
       display: flex;
       align-items: center;
@@ -338,15 +267,12 @@
       overflow: hidden;
     }
 
-    .story-img-frame img {
-      max-height: 100%;
-      object-fit: contain;
-    }
+    .story-img-frame img { max-height: 100%; object-fit: contain; }
 
     .story-caption-box {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
+      background-color: var(--md-surface-high);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-md);
       padding: 16px;
     }
 
@@ -355,136 +281,69 @@
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: var(--gold-primary);
+      color: var(--md-primary);
       text-transform: uppercase;
       margin-bottom: 4px;
     }
 
-    .story-caption-box h4 {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
+    .story-caption-box h4 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+    .story-caption-box p { font-size: 12px; color: var(--md-on-surface-variant); }
 
-    .story-caption-box p {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
+    .story-text h2 { font-size: 30px; font-weight: 500; line-height: 1.22; margin-bottom: 16px; }
+    .story-text p { font-size: 14px; color: var(--md-on-surface-variant); line-height: 1.78; margin-bottom: 16px; }
+    .story-text strong { color: var(--md-primary-light); font-weight: 500; }
 
-    .story-text h2 {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      line-height: 1.22;
-      margin-bottom: 18px;
-    }
-
-    .story-text p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.78;
-      margin-bottom: 16px;
-    }
-
-    .story-text strong {
-      color: var(--gold-primary);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 26px;
-    }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; }
 
     .stat-box {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-md);
       padding: 18px 16px;
     }
 
-    .stat-value {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--gold-primary);
-      margin-bottom: 4px;
-    }
+    .stat-value { font-size: 24px; font-weight: 700; color: var(--md-primary-light); margin-bottom: 4px; }
+    .stat-label { font-size: 11.5px; color: var(--md-on-surface-variant); }
 
-    .stat-label {
-      font-size: 11.5px;
-      color: var(--text-secondary);
-    }
-
-    /* =========================================
-       CRAFT PROCESS & PILLARS
-    ========================================= */
+    /* Process & Pillars */
     .process-section {
       padding: 64px 0 76px;
-      background-color: #0F0E0C;
-      border-top: 1px solid var(--border-subtle);
+      background-color: var(--md-surface-low);
+      border-top: 1px solid var(--md-outline-variant);
     }
 
-    .section-header-center {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 44px;
-    }
+    .section-header-center { text-align: center; max-width: 600px; margin: 0 auto 44px; }
+    .section-title { font-size: 28px; font-weight: 500; margin-bottom: 10px; }
+    .section-subtitle { font-size: 13.5px; color: var(--md-on-surface-variant); }
 
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 30px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      font-size: 13.5px;
-      color: var(--text-secondary);
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 48px;
-    }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
 
     .pillar-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      border-radius: var(--shape-lg);
       padding: 28px 24px;
     }
 
     .pillar-icon {
       width: 38px;
       height: 38px;
-      border-radius: 8px;
-      background-color: rgba(242, 199, 68, 0.12);
-      color: var(--gold-primary);
+      border-radius: var(--shape-sm);
+      background-color: var(--md-primary-container);
+      color: var(--md-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
     }
 
-    .pillar-card h3 {
-      font-family: var(--font-serif);
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .pillar-card p {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
+    .pillar-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
+    .pillar-card p { font-size: 12.5px; color: var(--md-on-surface-variant); line-height: 1.65; }
 
     .cta-banner {
-      background: linear-gradient(135deg, rgba(242, 199, 68, 0.14) 0%, rgba(24, 23, 19, 0.95) 65%);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-lg);
+      background-color: var(--md-surface-container);
+      border: 1px solid var(--md-primary);
+      border-radius: var(--shape-xl);
       padding: 32px;
       display: flex;
       align-items: center;
@@ -493,59 +352,42 @@
       flex-wrap: wrap;
     }
 
-    .cta-banner h3 {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
+    .cta-banner h3 { font-size: 22px; font-weight: 500; margin-bottom: 6px; }
+    .cta-banner p { font-size: 13.5px; color: var(--md-on-surface-variant); }
 
-    .cta-banner p {
-      font-size: 13.5px;
-      color: var(--text-secondary);
-    }
-
-    .cta-buttons {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .cta-buttons { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
     .btn-primary-gold {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: var(--gold-primary);
-      color: #0D0C0A;
+      background-color: var(--md-primary);
+      color: var(--md-on-primary);
       font-size: 13px;
       font-weight: 700;
       padding: 12px 22px;
-      border-radius: var(--radius-sm);
+      border-radius: var(--shape-full);
     }
 
-    .btn-primary-gold:hover {
-      background-color: var(--gold-hover);
-    }
+    .btn-primary-gold:hover { background-color: var(--md-primary-light); }
 
     .btn-wa-outline {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background-color: rgba(37, 211, 102, 0.12);
-      border: 1px solid rgba(37, 211, 102, 0.4);
+      border: 1px solid rgba(37, 211, 102, 0.38);
       color: #4ADE80;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
       padding: 12px 20px;
-      border-radius: var(--radius-sm);
+      border-radius: var(--shape-full);
     }
 
-    /* =========================================
-       FOOTER
-    ========================================= */
+    /* Footer */
     .footer {
-      background-color: #0A0908;
-      border-top: 1px solid var(--border-subtle);
+      background-color: var(--md-bg);
+      border-top: 1px solid var(--md-outline-variant);
       padding: 64px 0 28px;
     }
 
@@ -554,112 +396,46 @@
       grid-template-columns: 1.3fr 1.1fr 0.8fr 1fr;
       gap: 36px;
       padding-bottom: 48px;
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--md-outline-variant);
     }
 
-    .footer-brand-title {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--gold-primary);
-      margin-bottom: 14px;
-    }
+    .footer-brand-title { font-family: var(--font-display-serif); font-size: 16px; font-weight: 700; letter-spacing: 0.05em; color: var(--md-primary-light); margin-bottom: 14px; }
+    .footer-desc { font-size: 12.5px; color: var(--md-on-surface-variant); line-height: 1.65; margin-bottom: 16px; }
+    .footer-heritage-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--md-secondary-gold); }
 
-    .footer-desc {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-
-    .footer-heritage-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      color: var(--gold-muted);
-    }
-
-    .footer-col-title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--md-on-surface); margin-bottom: 16px; }
 
     .footer-wa-card {
       background-color: #131915;
-      border: 1px solid rgba(37, 211, 102, 0.28);
-      border-radius: var(--radius-md);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: var(--shape-md);
       padding: 14px;
       margin-top: 14px;
       display: block;
     }
 
-    .footer-wa-card:hover {
-      border-color: #4ADE80;
-    }
+    .footer-wa-card:hover { border-color: #4ADE80; }
+    .footer-wa-top { display: flex; align-items: center; gap: 8px; color: #4ADE80; font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+    .footer-wa-card p { font-size: 11px; color: var(--md-on-surface-variant); line-height: 1.45; }
 
-    .footer-wa-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #4ADE80;
-      font-size: 12.5px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 12.5px; color: var(--md-on-surface-variant); }
+    .footer-links a:hover { color: var(--md-primary-light); }
 
-    .footer-wa-card p {
-      font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-    }
-
-    .footer-links a:hover {
-      color: var(--gold-primary);
-    }
-
-    .ops-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-
-    .ops-list strong {
-      color: var(--text-primary);
-    }
+    .ops-list { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: var(--md-on-surface-variant); margin-bottom: 16px; }
+    .ops-list strong { color: var(--md-on-surface); font-weight: 500; }
 
     .ops-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: rgba(242, 199, 68, 0.08);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-primary);
+      background-color: var(--md-primary-container);
+      border: 1px solid var(--md-outline-variant);
+      color: var(--md-primary-light);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 500;
       padding: 6px 12px;
-      border-radius: var(--radius-sm);
+      border-radius: var(--shape-sm);
     }
 
     .footer-bottom {
@@ -670,40 +446,26 @@
       flex-wrap: wrap;
       gap: 12px;
       font-size: 11.5px;
-      color: var(--text-muted);
+      color: var(--md-on-surface-variant);
     }
 
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
     @media (max-width: 1024px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-      .pillars-grid, .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .story-grid { grid-template-columns: 1fr; }
+      .pillars-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-      .pillars-grid, .footer-grid, .stats-grid {
-        grid-template-columns: 1fr;
-      }
+      .nav-links { display: none; }
+      .pillars-grid, .footer-grid, .stats-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- =========================================
-       HEADER NAVBAR
-  ========================================= -->
   <header class="navbar">
     <div class="container navbar-inner">
       <a href="index.html" class="brand">
-        <img src="asset/Logo Qoe dalam Lencana Lingkaran celar.png" alt="PRIMA - Qoe Logo" class="brand-logo-img" />
+        <img src="asset/Logo Qoe dalam Lencana Lingkaran celar.png" alt="PRIMA QOE Logo" class="brand-logo-img" />
         <div class="brand-text-wrap">
           <div class="brand-title-row">
             <span class="brand-name">PRIMA QOE</span>
@@ -727,7 +489,6 @@
     </div>
   </header>
 
-  <!-- Announcement Sub-bar -->
   <div class="announcement-bar">
     <div class="container announcement-inner">
       <div class="announcement-left">
@@ -736,44 +497,37 @@
       </div>
       <div class="announcement-right">
         <span class="announcement-item">
-          <i data-lucide="map-pin" style="width:13px;height:13px;color:var(--gold-primary);"></i>
+          <i data-lucide="map-pin" style="width:13px;height:13px;color:var(--md-primary);"></i>
           Dispatch Nationwide from Bondowoso
         </span>
-        <a href="https://wa.me/6281288997766" target="_blank" class="announcement-item wa-link">
+        <a href="https://wa.me/628123416669" target="_blank" class="announcement-item wa-link">
           <i data-lucide="message-circle" style="width:13px;height:13px;"></i>
-          WhatsApp: +62 812-8899-7766
+          WhatsApp: +62 812-3416-6669
         </a>
       </div>
     </div>
   </div>
 
-  <!-- =========================================
-       PAGE HEADER BANNER
-  ========================================= -->
   <section class="page-banner">
     <div class="container">
       <div class="breadcrumb">
         <a href="index.html">Home</a>
         <span>/</span>
-        <span style="color:var(--gold-primary);">About Us</span>
+        <span style="color:var(--md-primary-light);">About Us</span>
       </div>
       <div class="eyebrow">
         <i data-lucide="compass" style="width:13px;height:13px;"></i>
         Our Origin &amp; Philosophy
       </div>
-      <h1 class="page-title">Rooted in Bondowoso, Crafted for Gourmet Palates</h1>
+      <h1 class="page-title">Rooted in Bondowoso, <span>Crafted for Gourmet Palates</span></h1>
       <p class="page-subtitle">
-        PRIMA QOE lahir dari kecintaan terhadap bahan pangan lokal terbaik di Bondowoso—menghadirkan sambal kecombrang aromatik dan camilan renyah buatan tangan dengan standar higienis dan cita rasa khas.
+        PRIMA QOE menghadirkan sambal kecombrang aromatik dan camilan renyah buatan dapur Bondowoso dengan standar higienis, bahan segar, dan layanan langsung via WhatsApp.
       </p>
     </div>
   </section>
 
-  <!-- =========================================
-       BRAND STORY & BONDOWOSO ROOTS
-  ========================================= -->
   <section class="story-section">
     <div class="container story-grid">
-      <!-- Left Visual Card -->
       <div class="story-visual-card">
         <div class="story-img-frame">
           <img src="asset/sambel.jpeg" alt="Prima Qoe Sambal Kecombrang Bondowoso" />
@@ -781,11 +535,10 @@
         <div class="story-caption-box">
           <span>Kitchen &amp; Origin</span>
           <h4>Bondowoso Highland Gastronomy</h4>
-          <p>Dipilih langsung dari bahan segar dan dimasak dalam jumlah terbatas agar kesegaran serta aroma khasnya tetap terjaga.</p>
+          <p>Dipilih dari bahan segar dan dimasak dalam batch kecil agar aroma kecombrang serta teksturnya tetap terjaga.</p>
         </div>
       </div>
 
-      <!-- Right Story Copy -->
       <div class="story-text">
         <div class="eyebrow">
           <i data-lucide="sparkles" style="width:13px;height:13px;"></i>
@@ -793,10 +546,10 @@
         </div>
         <h2>Menjaga Keaslian Rasa dalam Setiap Batch Kecil</h2>
         <p>
-          Di <strong>PRIMA QOE</strong>, setiap toples sambal kecombrang dan kemasan camilan disiapkan dengan perhatian penuh pada detail. Kami mengutamakan kesegaran bahan baku dari <strong>Bondowoso</strong>, perpaduan bumbu yang seimbang, serta proses pengolahan yang bersih dan terkontrol.
+          Di <strong>PRIMA QOE</strong>, setiap toples sambal kecombrang dan kemasan camilan disiapkan dengan perhatian penuh pada kesegaran bahan baku dari <strong>Bondowoso</strong>, perpaduan bumbu yang pas, serta proses yang bersih.
         </p>
         <p>
-          Alih-alih mengandalkan produksi massal di pabrik besar atau keranjang belanja otomatis yang kaku, kami melayani pemesanan secara langsung melalui <strong>WhatsApp Concierge</strong> agar setiap batch yang keluar dari dapur terasa segar dan personal.
+          Tanpa pengawet buatan dan tanpa alur keranjang belanja otomatis yang rumit, setiap pemesanan dilayani langsung melalui <strong>WhatsApp Concierge</strong> agar terasa hangat dan personal.
         </p>
 
         <div class="stats-grid">
@@ -817,9 +570,6 @@
     </div>
   </section>
 
-  <!-- =========================================
-       THREE PILLARS & CTA
-  ========================================= -->
   <section class="process-section">
     <div class="container">
       <div class="section-header-center">
@@ -829,39 +579,27 @@
         </div>
         <h2 class="section-title">Tiga Pilar Kualitas PRIMA QOE</h2>
         <p class="section-subtitle">
-          Standar yang selalu kami pegang dari pemilihan bahan di Bondowoso hingga pengiriman ke tangan Anda.
+          Standar yang selalu kami pegang dari dapur Bondowoso hingga pesanan tiba di tangan Anda.
         </p>
       </div>
 
       <div class="pillars-grid">
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <i data-lucide="flame" style="width:18px;height:18px;"></i>
-          </div>
+          <div class="pillar-icon"><i data-lucide="flame" style="width:18px;height:18px;"></i></div>
           <h3>Cita Rasa Otentik</h3>
-          <p>
-            Aroma khas kecombrang berpadu dengan racikan bumbu pilihan untuk menghadirkan sensasi pedas, gurih, dan segar yang pas di lidah.
-          </p>
+          <p>Aroma khas kecombrang berpadu dengan racikan bumbu pilihan untuk rasa pedas, gurih, dan segar yang seimbang.</p>
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
-          </div>
+          <div class="pillar-icon"><i data-lucide="shield-check" style="width:18px;height:18px;"></i></div>
           <h3>Kebersihan &amp; Kemasan</h3>
-          <p>
-            Diproses dan dikemas secara higienis menggunakan wadah yang aman untuk pangan agar kualitas produk tetap terjaga selama pengiriman.
-          </p>
+          <p>Diproses dan dikemas secara higienis agar kualitas sambal dan kerenyahan camilan tetap terjaga.</p>
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
-          </div>
+          <div class="pillar-icon"><i data-lucide="message-circle" style="width:18px;height:18px;"></i></div>
           <h3>Layanan Langsung</h3>
-          <p>
-            Pemesanan dan konsultasi varian dilakukan langsung dengan tim kami di Bondowoso melalui WhatsApp tanpa proses yang berbelit.
-          </p>
+          <p>Konsultasi varian, stok, dan pemesanan dilakukan langsung dengan tim kami di Bondowoso melalui WhatsApp.</p>
         </div>
       </div>
 
@@ -875,7 +613,7 @@
             Lihat Produk
             <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
           </a>
-          <a href="https://wa.me/6281288997766?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20bertanya%20seputar%20produk." target="_blank" class="btn-wa-outline">
+          <a href="https://wa.me/628123416669?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20bertanya%20seputar%20produk." target="_blank" class="btn-wa-outline">
             <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
             Chat WhatsApp
           </a>
@@ -884,9 +622,6 @@
     </div>
   </section>
 
-  <!-- =========================================
-       FOOTER
-  ========================================= -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -906,7 +641,7 @@
           <p class="footer-desc" style="margin-bottom:0;">
             Every jar and snack pouch is prepared fresh in Bondowoso and coordinated through personalized WhatsApp messaging.
           </p>
-          <a href="https://wa.me/6281288997766?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20memesan." target="_blank" class="footer-wa-card">
+          <a href="https://wa.me/628123416669?text=Halo%20PRIMA%20QOE%20Bondowoso,%20saya%20ingin%20memesan." target="_blank" class="footer-wa-card">
             <div class="footer-wa-top">
               <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
               WhatsApp Direct Order
